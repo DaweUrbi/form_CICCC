@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <form action="./index.html" method="GET" id="form" name="form">
+        <!--  
+        - name, email and password required
+        - age, phone, birthdate, gender(M, F), country(Brazil, Canada, Japan, Turkey), picture, Terms and Conditions, Newsletter not required
+        - reset and submit buttons
+        -->
+        <label for="name">Name: </label>
+        <input type="text" name="name" id="name" placeholder="Name" > 
+
+        <label for="email">Email: </label>
+        <input type="email" name="email" id="email" placeholder="user@user.com" > 
+
+        <label for="password">Password: </label>
+        <input type="password" name="password" id=password" placeholder="Password" > 
+
+
+        <label for="age">Age: </label>
+        <input type="number" name="age" id="age"placeholder="Age">
+
+        <label for="phone">Phone: </label>
+        <input type="number" name="phone" id="phone" placeholder="Phone">
+
+        <label for="birthdate">Birth date: </label>
+        <input type="date" name="bithdate" id="birthdate" placeholder="Birth date">
+
+        <label for="gender">Gender: </label>
+        <select name="gender" id="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="none">Non-binary</option>
+            <option value="none">Prefer not to respond</option>
+        </select>
+
+        <label for="country">Country: </label>
+        <select name="country" id="country">
+            <option value="brazil">Brazil</option>
+            <option value="canda">Canada</option>
+            <option value="japan">Japan</option>
+            <option value="turkey">Turkey</option>
+        </select>
+
+        <label for="image" id="image" name="image">Picture: </label>
+        <input type="file" name="image">
+
+        <label for="terms" id="terms" name="terms">Terms and Conditions: </label>
+        <input type="checkbox" name="terms" > 
+
+        <label for="newsletter" name="newsletter" id="newsletter">Newsletter: </label>
+        <input type="checkbox" name="newsletter"> 
+    
+
+        <button type="reset" id="reset">Reset</button>
+        <button type="submit" id="submit">Submit</button>
+
+    </form>
+    <div id="results">
+        <!-- Name: John --> 
+        <!--   All fields added -->
+    </div>
+
+    <script src="index.js">
+
+
+
+
+    </script>
+
+</body>
+</html>
