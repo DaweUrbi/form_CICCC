@@ -8,65 +8,72 @@
     <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-    <form action="./index.html" method="GET" id="form" name="form">
-        <!--  
-        - name, email and password required
-        - age, phone, birthdate, gender(M, F), country(Brazil, Canada, Japan, Turkey), picture, Terms and Conditions, Newsletter not required
-        - reset and submit buttons
-        -->
-        <label for="name">Name: </label>
-        <input type="text" name="name" id="name" placeholder="Name" > 
-
-        <label for="email">Email: </label>
-        <input type="email" name="email" id="email" placeholder="user@user.com" > 
-
-        <label for="password">Password: </label>
-        <input type="password" name="password" id=password" placeholder="Password" > 
-
-
-        <label for="age">Age: </label>
-        <input type="number" name="age" id="age"placeholder="Age">
-
-        <label for="phone">Phone: </label>
-        <input type="number" name="phone" id="phone" placeholder="Phone">
-
-        <label for="birthdate">Birth date: </label>
-        <input type="date" name="bithdate" id="birthdate" placeholder="Birth date">
-
-        <label for="gender">Gender: </label>
-        <select name="gender" id="gender">
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="none">Non-binary</option>
-            <option value="none">Prefer not to respond</option>
-        </select>
-
-        <label for="country">Country: </label>
-        <select name="country" id="country">
-            <option value="brazil">Brazil</option>
-            <option value="canda">Canada</option>
-            <option value="japan">Japan</option>
-            <option value="turkey">Turkey</option>
-        </select>
-
-        <label for="image" id="image" name="image">Picture: </label>
-        <input type="file" name="image">
-
-        <label for="terms" id="terms" name="terms">Terms and Conditions: </label>
-        <input type="checkbox" name="terms" > 
-
-        <label for="newsletter" name="newsletter" id="newsletter">Newsletter: </label>
-        <input type="checkbox" name="newsletter"> 
-    
-
-        <button type="reset" id="reset">Reset</button>
-        <button type="submit" id="submit">Submit</button>
-
+    <form id="form" action="/" method="post">
+        <h1>Form:</h1>
+        <div class="form-control">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" placeholder="Your name" required>
+        </div>
+        <div class="form-control">
+            <label for="email">E-mail:</label>
+            <input type="email" name="email" id="email" placeholder="Your email" required>
+        </div>
+        <div class="form-control">
+            <label for="">Password:</label>
+            <input type="password" name="password" placeholder="*******" required>
+        </div>
+        <div class="form-control">
+            <label for="age">Age:</label>
+            <input type="number" name="age" id="age" min=1 max=125>
+        </div>
+        <div class="form-control">
+            <label for="phone">Phone:</label>
+            <input type="tel" name="phone" id="phone" placeholder="604-604-6046" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+        </div>
+        <div class="form-control">
+            <label for="birthdate">Birthdate:</label>
+            <input type="date" name="birthdate" id="birthdate">
+        </div>
+        <div class="form-control">
+            <span>Gender</span>
+                <div>
+                    <label for="male">M</label>
+                    <input type="radio" name="gender" id="male" value="M">
+                    <label for="female">F</label>
+                    <input type="radio" name="gender" id="female" value="F">
+                </div>
+            
+        </div>
+        <div class="form-control">
+            <label for="country">Country:</label>
+            <select name="country" id="country">
+                <option value="Brazil">Brazil</option>
+                <option value="Canada">Canada</option>
+                <option value="Japan">Japan</option>
+                <option value="Turkey">Turkey</option>
+                <option value="US">US</option>
+            </select>
+        </div>
+        <div class="form-control">
+            <label for="picture">Picture:</label>
+            <input type="file" name="picture" id="picture">
+        </div>
+        <div class="form-control">
+            <div>
+                <label for="terms">I agree with the <a href="#">"Terms and Conditions"</a>:</label>
+                <input type="checkbox" name="terms" id="terms" required>
+            </div>
+            <div>
+                <label for="newsletter">Newsletter:</label>
+                <input type="checkbox" name="newsletter" id="newsletter">
+            </div>
+        </div>
+        <div class="buttons">
+            <button type="reset" class="reset-btn">Reset</button>
+            <button type="submit" id="submit">Submit</button>
+        </div>
     </form>
-    <div id="results">
-        <!-- Name: John --> 
-        <!--   All fields added -->
-    </div>
+    <div id="results"></div>
 
     <script src="index.js">
 

@@ -8,27 +8,33 @@
 //Bonus: add styling to the page
 
 
-const results = document.getElementById("reseults");
-const form =document.getElementById("form");
-
-form.addEventListener("submit" , function(e) {
+const results = document.getElementById("results");
+//Add event listener for submitting the form
+const form = document.getElementById("form");
+form.addEventListener("submit", function(e){
     e.preventDefault();
-    // results.innerHTML = "";
-    const params = new FormData(form);
-    console.log(params.entries());
+    results.innerHTML = "";
+    const params = new FormData(e.target);
+    // params = {name: "John", email:"john@doe.com"...}
+    console.log(params);
+    //Create validations
 
-    for (let pair of params.entries()) {
-        // [  key  ,  value  ]
-        //  pair[0]  pair[1]
+    //Loop through params object
+    // [[key, value],[key, value],[key, value]]
+    console.log(params.entries().toString());
+    for (let pair of params.entries()){
+        //parentArray[0] = [key, value] = pair
+        // [  key    ,    value    ] 
+        //   pair[0]     pair[1]
         let pKey = document.createElement('p');
         let pValue = document.createElement('p');
-        if (pair[1]) {
+        if(pair[1]){
             let value = "";
-            switch (pair[0]) {
-
-                case "picture":
-                    console.log(paor[1]);
-                    value = pair [1].name? pair[1].name: "No file chosen";
+            switch(pair[0]){
+                
+                case"picture":
+                console.log(pair[1]);
+                    value = pair[1].name? pair[1].name: "No file chosen";
                     break;
                 default:
                     value = pair[1];
@@ -37,10 +43,13 @@ form.addEventListener("submit" , function(e) {
             pValue.textContent = value;
             results.appendChild(pKey);
             results.appendChild(pValue);
-        }
 
+        }
     }
-    
+    // params.forEach(param => {
+    //     console.log(param)
+    // })
 })
+
 
 
